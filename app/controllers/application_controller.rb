@@ -1,7 +1,9 @@
-class ApplicationController < ActionController::Base
-    include SessionsHelper
+# frozen_string_literal: true
 
-    def hello
-        render html: 'Hallo Mutti'
-    end
+class ApplicationController < ActionController::Base
+  include SessionsHelper
+
+  def hello
+    render html: 'Hallo Mutti'
+  end
 end
