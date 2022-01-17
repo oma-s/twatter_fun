@@ -5,6 +5,7 @@ require 'test_helper'
 class UsersEditTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
+    @not_activated_user = users(:lana)
   end
 
   test 'unsuccessful edit' do
@@ -54,5 +55,11 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_equal email, @user.email
     log_in_as(@user)
     assert session[:forwarding_url].nil?
+  end
+
+  test 'should redirect when trying to show a user that is not yet activated' do
+    log_in_as(@user)
+    get user_path(@not_activated_user)
+    assert_redirected_to root_url
   end
 end
