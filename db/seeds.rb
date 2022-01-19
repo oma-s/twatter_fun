@@ -11,7 +11,7 @@ User.create!(name: 'Example User',
              password_confirmation: 'foobar',
              admin: true, 
              activated: true,
-             activated_at: Time.now)
+             activated_at: Time.zone.now)
 
 # Generate a bunch of additional users.
 99.times do |n|
@@ -23,5 +23,5 @@ User.create!(name: 'Example User',
                password: password,
                password_confirmation: password,
                activated: true,
-               activated_at: Time.now)
+               activated_at: Time.zone.now)
 end
