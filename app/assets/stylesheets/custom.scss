@@ -14,7 +14,24 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
+  color: lightgray;
+  background-color: #222222;
   padding-top: 60px;
+  // background-image: linear-gradient(
+  //   45deg,
+  //   hsl(68deg, 78%, 52%) 0%,
+  //   hsl(85deg, 76%, 59%) 9%,
+  //   hsl(110deg, 71%, 65%) 18%,
+  //   hsl(142deg, 72%, 59%) 27%,
+  //   hsl(162deg, 100%, 43%) 36%,
+  //   hsl(170deg, 100%, 42%) 45%,
+  //   hsl(177deg, 100%, 41%) 55%,
+  //   hsl(183deg, 100%, 41%) 64%,
+  //   hsl(187deg, 100%, 43%) 73%,
+  //   hsl(190deg, 100%, 43%) 82%,
+  //   hsl(197deg, 66%, 56%) 91%,
+  //   hsl(205deg, 54%, 61%) 100%
+  // );
 }
 
 section {
@@ -56,7 +73,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
+  color: $gray-medium-light;
 }
 
 p {
@@ -165,6 +182,7 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  border-radius: 5px;
 }
 
 .gravatar_edit {
@@ -232,7 +250,7 @@ input {
 /* Pagination controls styling */
 
 .digg_pagination {
-  background: white;
+  // background: white;
   cursor: default;
   /* self-clearing method: */
 }
@@ -246,24 +264,28 @@ input {
 }
 .digg_pagination .disabled {
   color: #999999;
-  border: 1px solid #dddddd;
+  border: 2px solid #dddddd;
+  border-radius: 5px;
 }
 .digg_pagination .current {
   font-style: normal;
   font-weight: bold;
-  background: #2e6ab1;
+  background: grey;
   color: white;
-  border: 1px solid #2e6ab1;
+  border: 2px solid grey;
+  border-radius: 5px;
 }
 .digg_pagination a {
   text-decoration: none;
   color: #105cb6;
-  border: 1px solid #9aafe5;
+  border: 2px solid #9aafe5;
+  border-radius: 5px;
 }
 .digg_pagination a:hover,
 .digg_pagination a:focus {
   color: #000033;
   border-color: #000033;
+  border-radius: 5px;
 }
 .digg_pagination .page_info {
   background: #2e6ab1;
@@ -290,4 +312,73 @@ input {
 }
 *:first-child + html .digg_pagination {
   overflow: hidden;
+}
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid grey;
+    // border: 2px solid #222222;
+    // background-color: whitesmoke;
+    // background-image: linear-gradient(
+    //   45deg,
+    //   hsl(68deg, 78%, 52%) 0%,
+    //   hsl(85deg, 76%, 59%) 9%,
+    //   hsl(110deg, 71%, 65%) 18%,
+    //   hsl(142deg, 72%, 59%) 27%,
+    //   hsl(162deg, 100%, 43%) 36%,
+    //   hsl(170deg, 100%, 42%) 45%,
+    //   hsl(177deg, 100%, 41%) 55%,
+    //   hsl(183deg, 100%, 41%) 64%,
+    //   hsl(187deg, 100%, 43%) 73%,
+    //   hsl(190deg, 100%, 43%) 82%,
+    //   hsl(197deg, 66%, 56%) 91%,
+    //   hsl(205deg, 54%, 61%) 100%
+    // );
+  }
+  a {
+    color: lightgray;
+    font-weight: bold;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.image {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
 }
