@@ -1,6 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* WELCOME TO THE MOST MESSY SCSS FILE. THIS WILL NEED A LOT OF REFACTORING */
+
+/*   ↓↓↓   This a function for a color-gradient that might be used at some point */
+
+// background-image: linear-gradient(
+//   45deg,
+//   hsl(68deg, 78%, 52%) 0%,
+//   hsl(85deg, 76%, 59%) 9%,
+//   hsl(110deg, 71%, 65%) 18%,
+//   hsl(142deg, 72%, 59%) 27%,
+//   hsl(162deg, 100%, 43%) 36%,
+//   hsl(170deg, 100%, 42%) 45%,
+//   hsl(177deg, 100%, 41%) 55%,
+//   hsl(183deg, 100%, 41%) 64%,
+//   hsl(187deg, 100%, 43%) 73%,
+//   hsl(190deg, 100%, 43%) 82%,
+//   hsl(197deg, 66%, 56%) 91%,
+//   hsl(205deg, 54%, 61%) 100%
+// );
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -15,23 +35,8 @@ $gray-medium-light: #eaeaea;
 
 body {
   color: lightgray;
-  background-color: #222222;
+  background-color: black;
   padding-top: 60px;
-  // background-image: linear-gradient(
-  //   45deg,
-  //   hsl(68deg, 78%, 52%) 0%,
-  //   hsl(85deg, 76%, 59%) 9%,
-  //   hsl(110deg, 71%, 65%) 18%,
-  //   hsl(142deg, 72%, 59%) 27%,
-  //   hsl(162deg, 100%, 43%) 36%,
-  //   hsl(170deg, 100%, 42%) 45%,
-  //   hsl(177deg, 100%, 41%) 55%,
-  //   hsl(183deg, 100%, 41%) 64%,
-  //   hsl(187deg, 100%, 43%) 73%,
-  //   hsl(190deg, 100%, 43%) 82%,
-  //   hsl(197deg, 66%, 56%) 91%,
-  //   hsl(205deg, 54%, 61%) 100%
-  // );
 }
 
 section {
@@ -40,12 +45,64 @@ section {
 
 textarea {
   resize: vertical;
+  color: #222;
+  border-radius: 5px;
+}
+
+span {
+  position: relative;
+}
+
+form {
+  padding: 10px 20px;
+}
+
+a {
+  color: $gray-medium-light;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn {
+  font-weight: bold;
+  color: black;
+  background-color: $gray-medium-light;
+  font-weight: bold;
+}
+
+.btn:hover {
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-primary:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 }
 
 .center {
   text-align: center;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  margin-bottom: 200px;
   h1 {
     margin-bottom: 10px;
+  }
+  .btn {
+    border: none;
+  }
+  .btn:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
   }
 }
 
@@ -83,6 +140,14 @@ p {
 
 /* header */
 
+.navbar {
+  background-color: black;
+}
+
+.nav {
+  text-align: right;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -108,7 +173,7 @@ footer {
   a {
     color: $gray;
     &:hover {
-      color: $gray-darker;
+      color: white;
     }
   }
   small {
@@ -160,8 +225,10 @@ aside {
   section {
     padding: 10px 0;
     margin-top: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
     &:first-child {
-      border: 0;
+      // border: 0;
       padding-top: 0;
     }
     span {
@@ -170,11 +237,15 @@ aside {
       line-height: 1;
     }
     h1 {
+      padding-top: 10px;
       font-size: 1.4em;
       text-align: left;
       letter-spacing: -1px;
       margin-bottom: 3px;
       margin-top: 0px;
+    }
+    img {
+      padding: 10px;
     }
   }
 }
@@ -182,11 +253,50 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
-  border-radius: 5px;
+  border: 2px solid black;
+  border-radius: 50%;
 }
 
 .gravatar_edit {
   margin-top: 15px;
+}
+
+.stats {
+  overflow: auto;
+  margin: 10px 0;
+  padding: 0;
+  text-align: center;
+  a {
+    float: none;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  strong {
+    display: inline-block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+    padding: 5px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
 }
 
 /* forms */
@@ -224,10 +334,17 @@ input {
   margin-top: -10px;
   margin-bottom: 10px;
   span {
-    margin-left: 20px;
+    margin-left: 25px;
     font-weight: normal;
   }
 }
+
+// .row {
+//   margin-bottom: 100px;
+//   p {
+//     margin-left: 20px;
+//   }
+// }
 
 #session_remember_me {
   width: auto;
@@ -239,7 +356,6 @@ input {
 .users {
   list-style: none;
   margin: 0;
-  margin-left: -40px;
   li {
     overflow: auto;
     padding: 10px 0;
@@ -250,7 +366,6 @@ input {
 /* Pagination controls styling */
 
 .digg_pagination {
-  // background: white;
   cursor: default;
   /* self-clearing method: */
 }
@@ -270,15 +385,14 @@ input {
 .digg_pagination .current {
   font-style: normal;
   font-weight: bold;
-  background: grey;
   color: white;
   border: 2px solid grey;
   border-radius: 5px;
 }
 .digg_pagination a {
   text-decoration: none;
-  color: #105cb6;
-  border: 2px solid #9aafe5;
+  color: white;
+  border: 2px solid $gray-medium-light;
   border-radius: 5px;
 }
 .digg_pagination a:hover,
@@ -288,7 +402,6 @@ input {
   border-radius: 5px;
 }
 .digg_pagination .page_info {
-  background: #2e6ab1;
   color: white;
   padding: 0.4em 0.6em;
   width: 22em;
@@ -297,7 +410,6 @@ input {
 }
 .digg_pagination .page_info b {
   color: #000033;
-  background: #6aa6ed;
   padding: 0.1em 0.25em;
 }
 .digg_pagination:after {
@@ -322,23 +434,6 @@ input {
   li {
     padding: 10px 0;
     border-top: 1px solid grey;
-    // border: 2px solid #222222;
-    // background-color: whitesmoke;
-    // background-image: linear-gradient(
-    //   45deg,
-    //   hsl(68deg, 78%, 52%) 0%,
-    //   hsl(85deg, 76%, 59%) 9%,
-    //   hsl(110deg, 71%, 65%) 18%,
-    //   hsl(142deg, 72%, 59%) 27%,
-    //   hsl(162deg, 100%, 43%) 36%,
-    //   hsl(170deg, 100%, 42%) 45%,
-    //   hsl(177deg, 100%, 41%) 55%,
-    //   hsl(183deg, 100%, 41%) 64%,
-    //   hsl(187deg, 100%, 43%) 73%,
-    //   hsl(190deg, 100%, 43%) 82%,
-    //   hsl(197deg, 66%, 56%) 91%,
-    //   hsl(205deg, 54%, 61%) 100%
-    // );
   }
   a {
     color: lightgray;
