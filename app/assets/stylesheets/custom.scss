@@ -367,6 +367,9 @@ input {
 
 .digg_pagination {
   cursor: default;
+  font-size: 0.7em;
+  text-align: center;
+  background-color: black;
   /* self-clearing method: */
 }
 .digg_pagination a,
@@ -379,27 +382,27 @@ input {
 }
 .digg_pagination .disabled {
   color: #999999;
-  border: 2px solid #dddddd;
-  border-radius: 5px;
+  // border: 2px solid #dddddd;
+  // border-radius: 5px;
 }
 .digg_pagination .current {
   font-style: normal;
   font-weight: bold;
   color: white;
-  border: 2px solid grey;
-  border-radius: 5px;
+  // border: 2px solid grey;
+  // border-radius: 5px;
 }
 .digg_pagination a {
   text-decoration: none;
   color: white;
-  border: 2px solid $gray-medium-light;
-  border-radius: 5px;
+  // border: 2px solid $gray-medium-light;
+  // border-radius: 5px;
 }
 .digg_pagination a:hover,
 .digg_pagination a:focus {
   color: #000033;
-  border-color: #000033;
-  border-radius: 5px;
+  // border-color: #000033;
+  // border-radius: 5px;
 }
 .digg_pagination .page_info {
   color: white;
