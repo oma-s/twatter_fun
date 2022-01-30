@@ -40,7 +40,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  host = 'localhost:3000' 
+  host = 'localhost:3000'
   # Use this on the cloud IDE:
   # config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   # Use this if developing on localhost:

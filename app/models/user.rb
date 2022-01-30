@@ -7,12 +7,12 @@ class User < ApplicationRecord
 
   has_secure_password
   has_many :microposts, dependent: :destroy
-  has_many :active_relationships, class_name:  "Relationship",
-                                  foreign_key: "follower_id",
-                                  dependent:    :destroy
-  has_many :passive_relationships, class_name: "Relationship",
-                                  foreign_key: "followed_id",
-                                  dependent:    :destroy
+  has_many :active_relationships, class_name: 'Relationship',
+                                  foreign_key: 'follower_id',
+                                  dependent: :destroy
+  has_many :passive_relationships, class_name: 'Relationship',
+                                   foreign_key: 'followed_id',
+                                   dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships
 
@@ -110,7 +110,7 @@ class User < ApplicationRecord
     email.downcase!
   end
 
-  #Creates and assigns the activation token and digest.
+  # Creates and assigns the activation token and digest.
   def create_activation_digest
     self.activation_token = User.new_token
     self.activation_digest = User.digest(activation_token)
