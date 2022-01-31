@@ -153,7 +153,6 @@ p {
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -339,13 +338,6 @@ input {
   }
 }
 
-// .row {
-//   margin-bottom: 100px;
-//   p {
-//     margin-left: 20px;
-//   }
-// }
-
 #session_remember_me {
   width: auto;
   margin-left: 0;
@@ -389,20 +381,14 @@ input {
   font-style: normal;
   font-weight: bold;
   color: white;
-  // border: 2px solid grey;
-  // border-radius: 5px;
 }
 .digg_pagination a {
   text-decoration: none;
   color: white;
-  // border: 2px solid $gray-medium-light;
-  // border-radius: 5px;
 }
 .digg_pagination a:hover,
 .digg_pagination a:focus {
   color: #000033;
-  // border-color: #000033;
-  // border-radius: 5px;
 }
 .digg_pagination .page_info {
   color: white;
