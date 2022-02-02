@@ -4,7 +4,8 @@ require 'test_helper'
 
 class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
   def setup
-    @user = users(:michael)
+    @user = users(:archer)
+    @admin_user = users(:michael)
   end
 
   test 'micropost interface' do
@@ -35,8 +36,14 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
       delete micropost_path(first_micropost)
     end
     # Visit a different user.
-    get user_path(users(:archer))
+    get user_path(users(:lana))
     assert_select 'a', text: 'delete', count: 0
+  end
+
+  test 'admin can delete microposts from other users' do
+    log_in_as(@admin_user)
+    get user_path(@user)
+    assert_select 'a', text: 'delete', count: 2
   end
 
   test 'micropost sidebar count' do
